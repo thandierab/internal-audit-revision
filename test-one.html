@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8cd142bdf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Multiple Choice Test</title>
+  <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+        
+    <h1>Practice Test One</h1>
+    <form id="quizForm">
+      <div class="question">
+        <h4>Question 1:</h4>
+        <p>
+          Who is responsible for assessing individual objectivity of internal
+          auditors?
+        </p>
+        <input type="radio" name="q1" value="A" /> A. The chief executive
+        officer.<br />
+        <input type="radio" name="q1" value="B" /> B. The board.<br />
+        <input type="radio" name="q1" value="C" /> C. The audit committee.<br />
+        <input type="radio" name="q1" value="D" /> D. The chief audit
+        executive.<br />
+      </div>
+
+      <div class="question">
+        <h4>Question 2:</h4>
+        <p>
+          An internal auditor becomes aware of illegal activity but takes no
+          action. What ethical code is violated?
+        </p>
+        <input type="radio" name="q2" value="A" /> A. Did not violate the Code
+        of Ethics.<br />
+        <input type="radio" name="q2" value="B" /> B. Violated the Code of
+        Ethics by failing to protect the well-being of the general public.<br />
+        <input type="radio" name="q2" value="C" /> C. Violated the Code of
+        Ethics by knowingly becoming a party to an illegal act.<br />
+        <input type="radio" name="q2" value="D" /> D. Did not violate the Code
+        of Ethics as conclusive information was not gathered.<br />
+      </div>
+
+      <div class="question">
+        <h4>Question 3:</h4>
+        <p>
+          What should an internal auditor do if offered a gift of moderate value
+          during the holiday season?
+        </p>
+        <input type="radio" name="q3" value="A" /> A. Accept it regardless of
+        circumstances.<br />
+        <input type="radio" name="q3" value="B" /> B. Not accept it prior to
+        submission of the final engagement communication.<br />
+        <input type="radio" name="q3" value="C" /> C. Not accept it if it is
+        presumed to impair the auditor's judgment.<br />
+        <input type="radio" name="q3" value="D" /> D. Not accept it, regardless
+        of circumstances.<br />
+      </div>
+
+      <div class="question">
+        <h4>Question 4:</h4>
+        <p>
+          Which type of standards applies to the characteristics of internal
+          audit service providers?
+        </p>
+        <input type="radio" name="q4" value="A" /> A. Implementation
+        Standards.<br />
+        <input type="radio" name="q4" value="B" /> B. Performance Standards.<br />
+        <input type="radio" name="q4" value="C" /> C. Attribute Standards.<br />
+        <input type="radio" name="q4" value="D" /> D. Independence Standards.<br />
+      </div>
+
+      <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div class="result" id="resultContainer" style="display: none"></div>
+
+    <script>
+      function submitQuiz() {
+        const totalQuestions = 4;
+        let score = 0;
+        const answers = {
+          q1: "D",
+          q2: "C",
+          q3: "C",
+          q4: "C",
+        };
+
+        const resultContainer = document.getElementById("resultContainer");
+        resultContainer.innerHTML = ""; // Clear previous results
+
+        for (let i = 1; i <= totalQuestions; i++) {
+          const question = "q" + i;
+          const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+          );
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+
+          // Highlight correct answers in the question
+          const questionText = document.querySelector(
+            `div.question:nth-of-type(${i}) p`
+          ).innerHTML;
+
+          questionDiv.innerHTML = `<strong>Question ${i}:</strong> ${questionText}<br>`;
+
+          if (selected) {
+            const userAnswer = selected.value;
+
+            // Check if the selected answer is correct
+            if (userAnswer === answers[question]) {
+              score++;
+              questionDiv.innerHTML += `<span class="correct">Correct! Your answer: ${userAnswer}.</span>`;
+            } else {
+              questionDiv.innerHTML += `Incorrect! The correct answer is <span class="correct">${answers[question]}.</span>`;
+            }
+          } else {
+            questionDiv.innerHTML += `<span>No answer selected.</span><br>`;
+          }
+
+          resultContainer.appendChild(questionDiv);
+        }
+
+        // Calculate percentage
+        const percentage = (score / totalQuestions) * 100;
+
+        // Display result summary
+        resultContainer.innerHTML += `<div>You scored ${percentage}%.</div>`;
+
+        resultContainer.innerHTML = resultContainer.innerHTML.slice(0, -2); // Remove trailing comma and space
+        resultContainer.innerHTML += `</div>`;
+
+        resultContainer.style.display = "block";
+      }
+    </script>
+
+     <div class="result" id="resultContainer" style="display: none"></div>
+
+        <div class="container d-flex justify-content-center mt-5">
+        <div class="test-link mx-2">
+            <a href="notes.html" class="btn btn-link">Notes</a>
+        </div>
+        <div class="test-link mx-2">
+            <a href="tests.html" class="btn btn-link">Tests</a>
+        </div>
+    </div>
+     <footer>
+
+      <p class="text-center mt-2">
+        <a> 2024 | Coded by <a href="https://thandierab-analyst.netlify.app/" title="Thandie's Portfolio">Thandie Rabasimane</a>.
+      </p>
+    </footer>
+  </body>
+</html>

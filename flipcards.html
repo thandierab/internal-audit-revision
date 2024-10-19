@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8cd142bdf.js"
+      crossorigin="anonymous"
+    ></script>
+<link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="d-flex justify-content-between">
+            <div class="names d-block fw-bold" title="Home"><a href="index.html"><i class="fas fa-home"></i></a></div>
+        <ul>
+           <li>
+            <a href="structure.html" title="Flip cards">Exam Structure</a>
+          </li>
+           <li>
+            <a href="standards.html" title="Standards">Standards Outline</a>
+          </li>
+          <li class="active">
+            <a href="flipcards.html" title="Learn">Flip Cards</a>
+          </li>
+          <li >
+            <a href="tests.html" title="Learn">Practice Tests</a>
+          </li>
+         
+          <li >
+            <a href="standard-notes.pdf" target="_blank" title="Standard Notes">Notes</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <h1>CIA Part 1 Practice</h1>
+    <div class="flip-card" id="card-1">
+      <div class="flip-card-inner" onclick="flipCard(1)">
+        <div class="flip-card-front">
+          <div class="question-number"><h4>Question 1:</h4></div>
+          <div class="question">
+            <p>
+              Who is responsible for assessing individual objectivity of
+              internal auditors?
+            </p>
+          </div>
+          <div class="answer-options">
+            <ul>
+              <li>A. The chief executive officer.</li>
+              <li>B. The board.</li>
+              <li>C. The audit committee.</li>
+              <li>D. The chief audit executive.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Answer:</strong> The chief audit executive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="card-2">
+      <div class="flip-card-inner" onclick="flipCard(2)">
+        <div class="flip-card-front">
+          <div class="question-number"><h4>Question 2:</h4></div>
+          <div class="question">
+            <p>
+              An internal auditor becomes aware of illegal activity but takes no
+              action. What ethical code is violated?
+            </p>
+          </div>
+          <div class="answer-options">
+            <ul>
+              <li>A. Did not violate the Code of Ethics.</li>
+              <li>
+                B. Violated the Code of Ethics by failing to protect the
+                well-being of the general public.
+              </li>
+              <li>
+                C. Violated the Code of Ethics by knowingly becoming a party to
+                an illegal act.
+              </li>
+              <li>
+                D. Did not violate the Code of Ethics as conclusive information
+                was not gathered.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            <strong>Answer:</strong> Violated the Code of Ethics by knowingly
+            becoming a party to an illegal act.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="card-3">
+      <div class="flip-card-inner" onclick="flipCard(3)">
+        <div class="flip-card-front">
+          <div class="question-number"><h4>Question 3:</h4></div>
+          <div class="question">
+            <p>
+              What should an internal auditor do if offered a gift of moderate
+              value during the holiday season?
+            </p>
+          </div>
+          <div class="answer-options">
+            <ul>
+              <li>A. Accept it regardless of circumstances.</li>
+              <li>
+                B. Not accept it prior to submission of the final engagement
+                communication.
+              </li>
+              <li>
+                C. Not accept it if it is presumed to impair the auditor's
+                judgment.
+              </li>
+              <li>D. Not accept it, regardless of circumstances.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            <strong>Answer:</strong> Not accept it if it is presumed to impair
+            the auditor's judgment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="card-4">
+      <div class="flip-card-inner" onclick="flipCard(4)">
+        <div class="flip-card-front">
+          <div class="question-number"><h4>Question 4:</h4></div>
+          <div class="question">
+            <p>
+              Which type of standards applies to the characteristics of internal
+              audit service providers?
+            </p>
+          </div>
+          <div class="answer-options">
+            <ul>
+              <li>A. Implementation Standards.</li>
+              <li>B. Performance Standards.</li>
+              <li>C. Attribute Standards.</li>
+              <li>D. Independence Standards.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Answer:</strong> Attribute Standards.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevCard()">Previous</button>
+      <button onclick="nextCard()">Next</button>
+    </div>
+
+    <footer>
+
+      <p class="text-center mt-2">
+        <a> 2024 | Coded by <a href="https://thandierab-analyst.netlify.app/" title="Thandie's Portfolio">Thandie Rabasimane</a>.
+      </p>
+    </footer>
+    <script>
+      let currentCard = 1;
+      const totalCards = 4;
+
+      // Show the first card
+      document.getElementById("card-" + currentCard).style.display = "block";
+
+      function showCard(cardNumber) {
+        for (let i = 1; i <= totalCards; i++) {
+          document.getElementById("card-" + i).style.display = "none";
+        }
+        document.getElementById("card-" + cardNumber).style.display = "block";
+      }
+
+      function flipCard(cardNumber) {
+        const card = document.querySelector(
+          `#card-${cardNumber} .flip-card-inner`
+        );
+        card.classList.toggle("flipped");
+      }
+
+      function nextCard() {
+        if (currentCard < totalCards) {
+          currentCard++;
+        } else {
+          currentCard = 1; // Loop back to the first card
+        }
+        showCard(currentCard);
+      }
+
+      function prevCard() {
+        if (currentCard > 1) {
+          currentCard--;
+        } else {
+          currentCard = totalCards; // Loop back to the last card
+        }
+        showCard(currentCard);
+      }
+    </script>
+  </body>
+</html>
